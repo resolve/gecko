@@ -26,6 +26,7 @@ module Gecko
     record :Variant
     record :Image
 
+    record :PriceList
     # Return OAuth client
     #
     # @return [OAuth2::Client]
