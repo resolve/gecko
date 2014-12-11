@@ -15,6 +15,7 @@ module Gecko
       belongs_to :stock_location,       class_name: 'Location'
       belongs_to :currency
       # belongs_to :default_price_list,   class_name: 'PriceList'
+      attribute :price_list_id,        String
 
       attribute :order_number,          String
       attribute :phone_number,          String

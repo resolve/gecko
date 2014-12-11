@@ -32,6 +32,8 @@ module Gecko
       belongs_to :billing_contact,          class_name: "User"
       belongs_to :primary_location,         class_name: "Location"
       belongs_to :primary_billing_location, class_name: "Location"
+      attribute :default_purchase_order_price_list_id, String
+      attribute :default_sales_order_price_list_id, String
 
       # belongs_to :default_currency, class_name: "Currency"
       # belongs_to :default_payment_term, class_name: "PaymentTerm"

@@ -12,7 +12,8 @@ module Gecko
       belongs_to :billing_address,    class_name: "Location"
 
       belongs_to :currency
-      belongs_to :default_price_list, class_name: "PriceList"
+      # belongs_to :default_price_list, class_name: "PriceList"
+      attribute :default_price_list_id, String
 
       attribute :order_number,          String
       attribute :reference_number,      String

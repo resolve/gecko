@@ -27,6 +27,7 @@ module Gecko
 
       attribute :default_discount_rate,  BigDecimal
 
+      attribute :default_price_list_id,  String
       # belongs_to :default_price_list,   class_name: "PriceList"
       # belongs_to :default_payment_term, class_name: "PaymentTerm"
     end
