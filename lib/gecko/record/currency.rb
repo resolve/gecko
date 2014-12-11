@@ -3,14 +3,14 @@ require 'gecko/record/base'
 module Gecko
   module Record
     class Currency < Base
+      attribute :delimiter, String
+      attribute :format,    String
       attribute :iso,       String
       attribute :name,      String
-      attribute :rate,      BigDecimal
-      attribute :symbol,    String
-      attribute :separator, String
-      attribute :delimiter, String
       attribute :precision, Integer
-      attribute :format,    String
+      attribute :rate,      BigDecimal
+      attribute :separator, String
+      attribute :symbol,    String
     end
 
     class CurrencyAdapter < BaseAdapter

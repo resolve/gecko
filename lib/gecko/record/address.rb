@@ -5,17 +5,18 @@ module Gecko
     class Address < Base
       belongs_to :company
 
-      attribute :phone_number, String
-      attribute :email,        String
-
-      attribute :label,        String
-      attribute :company_name, String
       attribute :address1,     String
       attribute :address2,     String
-      attribute :suburb,       String
       attribute :city,         String
-      attribute :state,        String
+      attribute :company_name, String
       attribute :country,      String
+      attribute :email,        String
+      attribute :label,        String
+      attribute :latitude,     BigDecimal
+      attribute :longitude,    BigDecimal
+      attribute :phone_number, String
+      attribute :state,        String
+      attribute :suburb,       String
       attribute :zip_code,     String
 
       attribute :status,       String,  readonly: true

@@ -7,40 +7,46 @@ module Gecko
       has_many :invoices
       has_many :order_line_items
 
-      belongs_to :company
-      belongs_to :shipping_address,     class_name: 'Address'
-      belongs_to :billing_address,      class_name: 'Address'
-      belongs_to :user,                 readonly: true
       belongs_to :assignee,             class_name: 'User'
-      belongs_to :stock_location,       class_name: 'Location'
+      belongs_to :billing_address,      class_name: 'Address'
+      belongs_to :company
+      belongs_to :contact
       belongs_to :currency
+      belongs_to :shipping_address,     class_name: 'Address'
+      belongs_to :stock_location,       class_name: 'Location'
+      belongs_to :user,                 readonly: true
       # belongs_to :default_price_list,   class_name: 'PriceList'
-      attribute :price_list_id,        String
+      attribute :default_price_list_id,         String
 
-      attribute :order_number,          String
-      attribute :phone_number,          String
       attribute :email,                 String
+      attribute :issued_at,             Date
       attribute :notes,                 String
+      attribute :order_number,          String
+      attribute :payment_status,        String
+      attribute :phone_number,          String
       attribute :reference_number,      String
+      attribute :ship_at,               Date
+      attribute :source_url,            String
       attribute :status,                String
-      attribute :packed_status,         String,     readonly: true
+      attribute :tax_treatment,         String
+
+      attribute :document_url,          String,     readonly: true
       attribute :fulfillment_status,    String,     readonly: true
       attribute :invoice_status,        String,     readonly: true
-      attribute :payment_status,        String
-      attribute :tax_type,              String
-      attribute :issued_at,             Date
-      attribute :ship_at,               Date
-      attribute :tax_override,          String,     readonly: true
-      attribute :tax_label,             String,     readonly: true
-      attribute :source_url,            String
-      attribute :document_url,          String,     readonly: true
-      attribute :total,                 BigDecimal, readonly: true
-
+      attribute :packed_status,         String,     readonly: true
       attribute :source_id,             String,     readonly: true
+      attribute :tax_label,             String,     readonly: true
+      attribute :tax_override,          String,     readonly: true
+      attribute :total,                 BigDecimal, readonly: true
 
       ## DEPRECATED
       attribute :tracking_number,       String,     readonly: true
+
+      # attribute :due_at,                Date
       # attribute :source,                String
+      # attribute :url,                   String
+      # attribute :tax_type,              String
+
       # attribute :invoice_numbers,       Hash[Integer => String], readonly: true
     end
 

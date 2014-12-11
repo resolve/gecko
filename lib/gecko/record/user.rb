@@ -5,23 +5,26 @@ module Gecko
     class User < Base
       attribute :first_name,         String
       attribute :last_name,          String
-      attribute :email,              String
       attribute :location,           String
-      attribute :position,           String
+      attribute :mobile,             String
       attribute :phone_number,       String
-      attribute :mobile_phone,       String
-      attribute :last_sign_in_at,    DateTime
-      attribute :avatar_url,         String
+      attribute :position,           String
 
-      attribute :status,             String
+      attribute :avatar_url,         String, readonly: true
+      attribute :email,              String, readonly: true
+      attribute :last_sign_in_at,    DateTime, readonly: true
+      attribute :status,             String, readonly: true
 
       # attribute :sales_report_email, Boolean
       # attribute :action_items_email, String
 
       # attribute :billing_contact,    Boolean
       # attribute :notification_email, Boolean
-      # attribute :permisssions,       Array[String]
+      # attribute :permissions,        Array[String]
       # attribute :account_id,         Integer
+
+      ## DEPRECATED
+      attribute :mobile_phone,       String
     end
 
     class UserAdapter < BaseAdapter

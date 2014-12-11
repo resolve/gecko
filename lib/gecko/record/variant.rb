@@ -20,49 +20,39 @@ module Gecko
       belongs_to :product
       has_many :images
 
-      attribute :name,            String
+      attribute :buy_price,       BigDecimal
+      attribute :composite,       Boolean
       attribute :description,     String
-
-      attribute :sku,             String
-      attribute :upc,             String
-      attribute :supplier_code,   String
-
+      attribute :keep_selling,    Boolean
+      attribute :manage_stock,    Integer
+      attribute :max_online,      Integer
+      attribute :name,            String
+      attribute :online_ordering, Boolean
       attribute :opt1,            String
       attribute :opt2,            String
       attribute :opt3,            String
-
-      attribute :weight,          String
-
-      attribute :status,          String,   readonly: true
-
-      attribute :product_name,    String,   readonly: true
-      attribute :product_status,  String,   readonly: true
-      attribute :product_type,    String,   readonly: true
-
-      attribute :wholesale_price, BigDecimal
-      attribute :retail_price,    BigDecimal
-      attribute :buy_price,       BigDecimal
-
-      attribute :moving_average_cost, BigDecimal, readonly: true
-      attribute :last_cost_price,     BigDecimal, readonly: true
-
-      attribute :manage_stock,    Integer
-      attribute :reorder_point,   Integer
-      attribute :max_online,      Integer
-
-      attribute :composite,       Boolean
-      attribute :keep_selling,    Boolean
-      attribute :taxable,         Boolean
-      attribute :sellable,        Boolean
-      attribute :online_ordering, Boolean
-
       attribute :position,        Integer
-
-      attribute :stock_on_hand,   BigDecimal, readonly: true
-      attribute :committed_stock, BigDecimal, readonly: true
+      attribute :retail_price,    BigDecimal
+      attribute :sellable,        Boolean
+      attribute :sku,             String
+      attribute :supplier_code,   String
+      attribute :taxable,         Boolean
+      attribute :upc,             String
+      attribute :weight,          String
+      attribute :wholesale_price, BigDecimal
 
       attribute :locations,       Array[VariantLocation]
       attribute :variant_prices,  Array[VariantPrice]
+
+      ## Read Only
+      attribute :committed_stock, BigDecimal, readonly: true
+      attribute :last_cost_price,     BigDecimal, readonly: true
+      attribute :moving_average_cost, BigDecimal, readonly: true
+      attribute :product_name,    String,   readonly: true
+      attribute :product_status,  String,   readonly: true
+      attribute :product_type,    String,   readonly: true
+      attribute :status,          String,   readonly: true
+      attribute :stock_on_hand,   BigDecimal, readonly: true
 
       # Returns a display name for a variant
       #
@@ -88,6 +78,7 @@ module Gecko
       # attribute :stock_levels,           Hash[Integer => BigDecimal], readonly: true
       # attribute :committed_stock_levels, Hash[Integer => BigDecimal], readonly: true
       # attribute :online_id
+      # attribute :reorder_point,   Integer
     end
 
     class VariantAdapter < BaseAdapter
