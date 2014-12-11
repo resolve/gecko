@@ -27,6 +27,10 @@ module Gecko
       attribute :status,                 String
       attribute :tax_number,             String
       attribute :website,                String
+
+      ## DEPRECATED
+      attribute :default_price_type_id,  String
+
     end
 
     class CompanyAdapter < BaseAdapter

@@ -12,13 +12,13 @@ module Gecko
       attribute :location,     String
       attribute :mobile,       String
       attribute :notes,        String
-      attribute :phone,        String
+      attribute :phone_number, String
       attribute :position,     String
 
       attribute :status,       String,  readonly: true
 
       ## DEPRECATED
-      attribute :phone_number, String
+      attribute :phone,        String
     end
 
     class ContactAdapter < BaseAdapter

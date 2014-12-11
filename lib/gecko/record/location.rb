@@ -9,8 +9,6 @@ module Gecko
       attribute :country,      String
       attribute :holds_stock,  Boolean
       attribute :label,        String
-      attribute :latitude,     BigDecimal
-      attribute :longitude,    BigDecimal
       attribute :state,        String
       attribute :suburb,       String
       attribute :zip_code,     String

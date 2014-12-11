@@ -12,8 +12,6 @@ module Gecko
       attribute :country,      String
       attribute :email,        String
       attribute :label,        String
-      attribute :latitude,     BigDecimal
-      attribute :longitude,    BigDecimal
       attribute :phone_number, String
       attribute :state,        String
       attribute :suburb,       String

@@ -6,53 +6,42 @@ module Gecko
       has_many :users
       has_many :locations
 
-      attribute :name,             String
-      attribute :industry,         String
-      attribute :logo_url,         String,  readonly: true
-      attribute :website,          String
-      attribute :tax_number,       String
-      attribute :country,          String
-      attribute :time_zone,        String
-
-      attribute :contact_email,    String
-      attribute :contact_mobile,   String
-      attribute :contact_phone,    String
-
-      attribute :invoice_details,  String
-      attribute :order_details,    String
-      attribute :quote_details,    String
-
-      attribute :default_tax_rate, String
-
-      attribute :default_sales_order_tax_type_id, Integer
-      attribute :default_tax_treatment
-
-      attribute :tax_number_label, String
-      attribute :tax_label,        String
-
-      attribute :default_sales_ledger_account_on, String
-
-      belongs_to :billing_contact,          class_name: "User"
-      belongs_to :primary_location,         class_name: "Location"
-      belongs_to :primary_billing_location, class_name: "Location"
-      belongs_to :default_currency,         class_name: "Currency"
-
+      belongs_to :billing_contact,                 class_name: "User"
+      belongs_to :default_currency,                class_name: "Currency"
       belongs_to :default_line_item_tax_type,      class_name: "TaxType"
-      belongs_to :default_tax_type,                class_name: "TaxType"
-      belongs_to :default_tax_exempt,              class_name: "TaxType"
-      belongs_to :default_sales_order_tax_type,    class_name: "TaxType"
       belongs_to :default_purchase_order_tax_type, class_name: "TaxType"
-      belongs_to :default_tax_exempt,                 class_name: "TaxType"
 
-      attribute :default_purchase_order_price_list_id, String
-      attribute :default_sales_order_price_list_id, String
+      belongs_to :default_sales_order_tax_type,    class_name: "TaxType"
+      belongs_to :default_tax_exempt,              class_name: "TaxType"
+      belongs_to :default_tax_exempt,              class_name: "TaxType"
+      belongs_to :default_tax_type,                class_name: "TaxType"
+      belongs_to :primary_billing_location,        class_name: "Location"
+      belongs_to :primary_location,                class_name: "Location"
 
+      # belongs_to :default_order_price_list,          class_name: "PriceList"
+      attribute :default_order_price_list_id,          String
+      # belongs_to :default_payment_term,              class_name: "PaymentTerm"
+      attribute :default_payment_term_id,              Integer
       # belongs_to :default_purchase_order_price_list, class_name: "PriceList"
-      # belongs_to :default_order_price_list, class_name: "PriceList"
+      attribute :default_purchase_order_price_list_id, String
 
-      # belongs_to :default_payment_term, class_name: "PaymentTerm"
+      attribute :contact_email,                   String
+      attribute :contact_mobile,                  String
+      attribute :contact_phone,                   String
+      attribute :country,                         String
+      attribute :default_sales_ledger_account_on, String
+      attribute :default_tax_treatment,           String
+      attribute :industry,                        String
+      attribute :name,                            String
+      attribute :stock_level_warn,                Boolean
+      attribute :tax_label,                       String
+      attribute :tax_number,                      String
+      attribute :tax_number_label,                String
+      attribute :time_zone,                       String
+      attribute :website,                         String
 
-      attribute :stock_level_warn, Boolean
+      attribute :logo_url,                        String,  readonly: true
+
       # attribute :subscription_name,          String
       # attribute :subscription_price,         String
       # attribute :annual_subscription_price,  String

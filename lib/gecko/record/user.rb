@@ -11,6 +11,7 @@ module Gecko
       attribute :position,           String
 
       attribute :avatar_url,         String, readonly: true
+      attribute :billing_contact,    Boolean, readonly: true
       attribute :email,              String, readonly: true
       attribute :last_sign_in_at,    DateTime, readonly: true
       attribute :status,             String, readonly: true
@@ -18,7 +19,6 @@ module Gecko
       # attribute :sales_report_email, Boolean
       # attribute :action_items_email, String
 
-      # attribute :billing_contact,    Boolean
       # attribute :notification_email, Boolean
       # attribute :permissions,        Array[String]
       # attribute :account_id,         Integer

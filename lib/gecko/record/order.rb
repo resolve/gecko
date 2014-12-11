@@ -16,7 +16,7 @@ module Gecko
       belongs_to :stock_location,       class_name: 'Location'
       belongs_to :user,                 readonly: true
       # belongs_to :default_price_list,   class_name: 'PriceList'
-      attribute :default_price_list_id,         String
+      attribute :default_price_list_id, String
 
       attribute :email,                 String
       attribute :issued_at,             Date
